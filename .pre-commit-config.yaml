@@ -1,0 +1,23 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=100000"]
+      - id: pretty-format-json
+      - id: check-json
+
+  - repo: https://github.com/psf/black
+    rev: d9b8a6407e2f46304a8d36b18e4a73d8e0613519
+    hooks:
+      - id: black
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 3a72e069635a865a92b8a0273aa829f630cbcd6f
+    hooks:
+      - id: isort
